@@ -18,7 +18,7 @@ module Io
 
     # decorates style with units
     public
-    def svg_dec_style_units ( style = SVG_STYLE )
+    def self.svg_dec_style_units ( style = SVG_STYLE )
       return style.merge( { :letter_spacing => "%gem" % style[:letter_spacing] } ) 
     end # svg_dec_style_units
 
