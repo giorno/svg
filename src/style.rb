@@ -13,6 +13,7 @@ module Io
       :fill           => 'black',
       :letter_spacing => -0.15, # em, Inkscape does not support anything else
       :font_size      => 3.0, # mm
+      :text_anchor    => 'left',
     }
 
     # decorates style with units
