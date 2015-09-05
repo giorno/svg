@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 # vim; et
-#
+
 require 'rasem'
 
 module Io
