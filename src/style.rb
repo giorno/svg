@@ -28,7 +28,7 @@ module Io
         :stroke_width => "%fmm" % style[:stroke_width],
         :letter_spacing => "%gem" % style[:letter_spacing],
       } )
-      if purpose == SVG_STYLE_TEXT:
+      if purpose == SVG_STYLE_TEXT
         copy.delete( :stroke_width )
       else # SVG_STYLE_LINE
         return copy.merge( { :fill => 'none' } )
