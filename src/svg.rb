@@ -37,8 +37,10 @@ module Io
 
       # begin an SVG path
       public
-      def pbegin ( )
-        @output << %Q{<path d="}
+      def pbegin ( pattern = nil)
+        @output << %Q{<path }
+        if not pattern.nil? then @output << %Q{stroke-dasharray="#{pattern}" } end
+        @output << %Q{d="}
         @in_path = true
       end
 
