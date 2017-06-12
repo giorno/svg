@@ -5,15 +5,15 @@ module Io
   module Creat
 
     SVG_STYLE = {
-      :stroke_width   => 0.11, # mm
-      :stroke         => 'black',
-      :font_family    => 'Slipstick Sans Mono,Arial,Sans-serif', 
-      :font_weight    => 'normal',
-      :font_style     => 'normal',
-      :fill           => 'black',
-      :letter_spacing => -0.15, # em, Inkscape does not support anything else
-      :font_size      => 3.0, # mm
-      :text_anchor    => 'left',
+      :"stroke-width"    => 0.11, # mm
+      :stroke           => 'black',
+      :"font-family"    => 'Slipstick Sans Mono,Arial,Sans-serif', 
+      :"font-weight"    => 'normal',
+      :"font-style"     => 'normal',
+      :fill             => 'black',
+      :"letter-spacing" => -0.15, # em, Inkscape does not support anything else
+      :"font-size"      => 3.0, # mm
+      :"text-anchor"    => 'left',
     }
 
     SVG_STYLE_LINE = 1;
@@ -25,11 +25,11 @@ module Io
       raise "Only SVG_STYLE_LINE or SVG_STYLE_TEXT are supported" unless [ SVG_STYLE_LINE, SVG_STYLE_TEXT ].include?( purpose ) 
       copy = style.merge(
       {
-        :letter_spacing => "%gem" % style[:letter_spacing],
+        :"letter-spacing" => "%gem" % style[:"letter-spacing"],
       } )
       if purpose == SVG_STYLE_TEXT
         copy.delete( :stroke )
-        copy.delete( :stroke_width )
+        copy.delete( :"stroke-width" )
       else # SVG_STYLE_LINE
         return copy.merge( { :fill => 'none' } )
       end
