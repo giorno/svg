@@ -57,8 +57,9 @@ module Io
       # Embed an external SVG at a specified position.
       public
       def import ( path, x, y, w, h, deg = 0 )
+        image( x, y, w, h * 2, path ).rotate( deg, x, y )
         # hack to bypass Inkscape resistance to accept mm units
-        @output << %Q{<use x="#{x}" y="#{y}" width="#{w}" height="#{h*2}" xlink:href="#{path}#layer1" transform="rotate(#{deg}, #{x}, #{y})"/>}
+        #@output << %Q{<image x="#{x}" y="#{y}" width="#{w}" height="#{h*2}" xlink:href="#{path}#layer1" transform="rotate(#{deg}, #{x}, #{y})"/>}
       end
 
     end # Svg
